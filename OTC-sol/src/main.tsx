@@ -5,10 +5,11 @@ import WebLayout from './components/layouts/WebLayout';
 import './index.css';
 
 // Import new page components
-import AboutUs from '@/pages/AboutUs';
+
 import ContactUs from '@/pages/ContactUs';
 import Services from '@/pages/Services';
-import WhoAreWe from '@/pages/WhoAreWe';
+import Team from '@/pages/about us/team';
+import WhoAreWe from '@/pages/about us/whoAreWe';
 import WhyUs from '@/pages/WhyUs';
 
 function App() {
@@ -16,8 +17,10 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<WebLayout />}>
-          <Route path="who-are-we" element={<WhoAreWe />} />
-          <Route path="about-us" element={<AboutUs />} />
+          <Route path="about-us">
+            <Route path="team" element={<Team />} />
+            <Route path="who-are-we" element={<WhoAreWe />} />
+          </Route>
           <Route path="services" element={<Services />} />
           <Route path="why-us" element={<WhyUs />} />
           <Route path="contact-us" element={<ContactUs />} />

@@ -1,10 +1,10 @@
 import {
-    NavigationMenu,
-    NavigationMenuContent,
-    NavigationMenuItem,
-    NavigationMenuLink,
-    NavigationMenuList,
-    NavigationMenuTrigger
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger
 } from "@/components/ui/navigation-menu";
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -59,7 +59,6 @@ const services = [
 ];
 
 const navItems = [
-  { label: "Who are we", path: "/who-are-we" },
   { label: "About us", path: "/about-us" },
   { label: "Services", path: "/services" },
   { label: "Why us", path: "/why-us" },
@@ -104,6 +103,7 @@ export default function Navbar() {
               const isActive = selectedIndex === idx;
               const isHovered = hoverIndex === idx;
               const isServices = item.label === "Services";
+              const isAboutUs = item.label === "About us";
               const navItemStyle: React.CSSProperties = {
                 fontSize: "1.25rem",
                 textAlign: "center",
@@ -212,6 +212,77 @@ export default function Navbar() {
                               </ul>
                             </div>
                           ))}
+                        </div>
+                      </div>
+                    </NavigationMenuContent>
+                  </NavigationMenuItem>
+                );
+              }
+              if (isAboutUs) {
+                return (
+                  <NavigationMenuItem
+                    key={item.label}
+                    onMouseEnter={() => setHoverIndex(idx)}
+                    onMouseLeave={() => setHoverIndex(null)}
+                    style={{ position: "relative" }}
+                  >
+                    <NavigationMenuTrigger
+                      style={navItemStyle}
+                      onClick={() => navigate(item.path)}
+                    >
+                      {item.label}
+                      <span style={underlineStyle}></span>
+                    </NavigationMenuTrigger>
+                    <NavigationMenuContent
+                      style={{
+                        minWidth: "180px",
+                        width: "max-content",
+                        left: "0",
+                        right: "auto",
+                        transform: "none",
+                        marginTop: "0.5rem",
+                        padding: 0,
+                        background: "#fff",
+                        boxShadow: "0 2px 12px rgba(0,0,0,0.08)",
+                        borderRadius: "8px",
+                        zIndex: 1000,
+                        position: "absolute",
+                      }}
+                    >
+                      <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem", padding: "1rem" }}>
+                        <div
+                          style={{
+                            fontWeight: 500,
+                            fontSize: "1.05rem",
+                            cursor: "pointer",
+                            padding: "0.4rem 0.75rem",
+                            borderRadius: "4px",
+                            color: "var(--foreground)",
+                            transition: "background 0.2s, color 0.2s"
+                          }}
+                          tabIndex={0}
+                          onClick={() => navigate("/about-us/team")}
+                          onMouseOver={e => (e.currentTarget.style.color = "var(--primary)")}
+                          onMouseOut={e => (e.currentTarget.style.color = "var(--foreground)")}
+                        >
+                          Team
+                        </div>
+                        <div
+                          style={{
+                            fontWeight: 500,
+                            fontSize: "1.05rem",
+                            cursor: "pointer",
+                            padding: "0.4rem 0.75rem",
+                            borderRadius: "4px",
+                            color: "var(--foreground)",
+                            transition: "background 0.2s, color 0.2s"
+                          }}
+                          tabIndex={0}
+                          onClick={() => navigate("/about-us/who-are-we")}
+                          onMouseOver={e => (e.currentTarget.style.color = "var(--primary)")}
+                          onMouseOut={e => (e.currentTarget.style.color = "var(--foreground)")}
+                        >
+                          Who Are We
                         </div>
                       </div>
                     </NavigationMenuContent>
