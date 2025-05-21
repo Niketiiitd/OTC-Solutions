@@ -83,17 +83,24 @@ export default function Navbar() {
         <NavigationMenu className="">
           <NavigationMenuList className="flex justify-center items-center ">
             {navItems.map((item, idx) => {
-              const isActive = selectedIndex === idx;
-              const isHovered = hoverIndex === idx;
               const isServices = item.label === "Services";
               const isAboutUs = item.label === "About us";
+              // Mark as active if current path matches or is a subroute
+              const isActive =
+                location.pathname === item.path ||
+                (isServices && location.pathname.startsWith("/services")) ||
+                (isAboutUs && location.pathname.startsWith("/about-us"));
+              const isHovered = hoverIndex === idx;
+
+              // Only selected nav item is blue, others use default
               const navItemStyle = [
                 "text-xl text-center relative bg-none border-none outline-none cursor-pointer px-6 py-2 font-sans transition-colors duration-200",
-                (isActive || isHovered) ? "text-primary" : "text-foreground"
+                isActive ? "text-[oklch(0.623_0.214_259.815)]" : "text-[oklch(0.141_0.005_285.823)]"
               ].join(" ");
+
               const underlineStyle = [
-                "absolute left-1/2 -translate-x-1/2 bottom-0 w-6 h-0.5 rounded transition-colors duration-200",
-                isActive ? "bg-primary" : "bg-transparent"
+                "pointer-events-none absolute left-1/2 -translate-x-1/2 bottom-0 h-0.5 rounded transition-colors duration-200",
+                isActive ? "bg-[oklch(0.623_0.214_259.815)] w-8" : "bg-transparent w-8"
               ].join(" ");
 
               if (isServices) {
