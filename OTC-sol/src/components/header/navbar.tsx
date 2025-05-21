@@ -199,7 +199,7 @@ export default function Navbar() {
                     <NavigationMenuContent
                       className="absolute left-1/2 -translate-x-1/2 mt-2 min-w-[180px] w-max bg-white shadow-lg rounded-lg z-[1000] p-0"
                     >
-                      <div className="flex flex-col gap-2 p-4">
+                      <div className="flex flex-col p-4">
                         {[
                           { label: "Team", path: "/about-us/team" },
                           { label: "Who Are We", path: "/about-us/who-are-we" }
@@ -209,8 +209,8 @@ export default function Navbar() {
                             <div
                               key={subIdx}
                               className={
-                                "font-medium text-base cursor-pointer px-3 py-2 rounded transition-colors duration-200 hover:text-primary " +
-                                (isSubActive ? "text-[oklch(0.623_0.214_259.815)] border-b-2 border-[oklch(0.623_0.214_259.815)]" : "text-foreground")
+                                "font-medium text-base cursor-pointer px-3 py-2 rounded transition-colors duration-200 hover:text-primary relative flex justify-center items-center " +
+                                (isSubActive ? "text-[oklch(0.623_0.214_259.815)]" : "text-foreground")
                               }
                               tabIndex={0}
                               onClick={() => {
@@ -218,7 +218,13 @@ export default function Navbar() {
                                 setHoverIndex(null);
                               }}
                             >
-                              {sub.label}
+                              <span className="w-full text-center">{sub.label}</span>
+                              <span
+                                className={[
+                                  "pointer-events-none absolute left-1/2 -translate-x-1/2 bottom-0 h-0.5 rounded transition-colors duration-200",
+                                  isSubActive ? "bg-[oklch(0.623_0.214_259.815)] w-8" : "bg-transparent w-8"
+                                ].join(" ")}
+                              ></span>
                             </div>
                           );
                         })}
