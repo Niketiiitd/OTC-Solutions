@@ -108,7 +108,6 @@ export default function Navbar() {
                   <NavigationMenuItem
                     key={item.label}
                     onMouseEnter={() => setHoverIndex(idx)}
-                    onMouseLeave={() => setHoverIndex(null)}
                     className="relative"
                   >
                     <NavigationMenuTrigger
@@ -118,39 +117,50 @@ export default function Navbar() {
                       {item.label}
                       <span className={underlineStyle}></span>
                     </NavigationMenuTrigger>
-                    <NavigationMenuContent
-                      className="absolute left-1/2 -translate-x-1/2 mt-2 w-[90vw] max-w-7xl bg-white shadow-lg rounded-lg z-[1000] p-0"
-                    >
-                      <div className="w-full relative text-base px-[3vw] py-8 bg-white box-border">
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
-                          {services.map((service, sidx) => (
-                            <div key={service.title + sidx}>
-                              <div
-                                className="font-bold text-lg cursor-pointer py-1 rounded text-left text-foreground bg-inherit transition-colors duration-200"
-                                tabIndex={0}
-                                onMouseOver={e => (e.currentTarget.classList.add("text-primary"))}
-                                onMouseOut={e => (e.currentTarget.classList.remove("text-primary"))}
-                              >
-                                {service.title}
+                    {isHovered && (
+                      <div
+                        className="fixed inset-0 flex flex-col items-center justify-start overflow-y-auto z-[2000]"
+                        style={{ top: "64px", background: "rgba(255,255,255,0.95)" }}
+                        onMouseEnter={() => setHoverIndex(idx)}
+                        onMouseLeave={() => setHoverIndex(null)}
+                      >
+                        <div className="w-full max-w-7xl mx-auto px-8 py-12 bg-white shadow-lg rounded-lg border border-[oklch(0.92_0.004_286.32)] mt-4"
+                          onMouseEnter={() => setHoverIndex(idx)}
+                          onMouseLeave={() => setHoverIndex(null)}
+                        >
+                          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 w-full">
+                            {services.map((service, sidx) => (
+                              <div key={service.title + sidx}>
+                                <div
+                                  className="font-bold text-lg cursor-pointer py-1 rounded text-left text-foreground bg-inherit transition-colors duration-200 group"
+                                  tabIndex={0}
+                                  onMouseOver={e => (e.currentTarget.classList.add("text-[oklch(0.623_0.214_259.815)]"))}
+                                  onMouseOut={e => (e.currentTarget.classList.remove("text-[oklch(0.623_0.214_259.815)]"))}
+                                >
+                                  {service.title}
+                                </div>
+                                <ul className="pl-5 my-2 list-disc text-foreground font-sans">
+                                  {service.subtopics.map((sub, subIdx) => {
+                                    const heading = sub.split("-")[0].trim();
+                                    return (
+                                      <li
+                                        key={subIdx}
+                                        className="mb-1 font-normal text-base font-sans cursor-pointer transition-colors duration-200 hover:text-[oklch(0.623_0.214_259.815)]"
+                                        tabIndex={0}
+                                        onMouseOver={e => (e.currentTarget.classList.add("text-[oklch(0.623_0.214_259.815)]"))}
+                                        onMouseOut={e => (e.currentTarget.classList.remove("text-[oklch(0.623_0.214_259.815)]"))}
+                                      >
+                                        {heading}
+                                      </li>
+                                    );
+                                  })}
+                                </ul>
                               </div>
-                              <ul className="pl-5 my-2 list-disc text-foreground font-sans">
-                                {service.subtopics.map((sub, subIdx) => {
-                                  const heading = sub.split("-")[0].trim();
-                                  return (
-                                    <li
-                                      key={subIdx}
-                                      className="mb-1 font-normal text-base font-sans"
-                                    >
-                                      {heading}
-                                    </li>
-                                  );
-                                })}
-                              </ul>
-                            </div>
-                          ))}
+                            ))}
+                          </div>
                         </div>
                       </div>
-                    </NavigationMenuContent>
+                    )}
                   </NavigationMenuItem>
                 );
               }
