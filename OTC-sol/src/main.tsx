@@ -6,10 +6,10 @@ import './index.css';
 
 // Import new page components
 
-import ContactUs from '@/pages/ContactUs';
-import Services from '@/pages/Services';
 import Team from '@/pages/about us/team';
 import WhoAreWe from '@/pages/about us/whoAreWe';
+import ContactUs from '@/pages/ContactUs';
+import Services from '@/pages/Services';
 import WhyUs from '@/pages/WhyUs';
 
 function App() {
@@ -18,6 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<WebLayout />}>
           <Route path="about-us">
+            <Route index element={<WhoAreWe />} />
             <Route path="team" element={<Team />} />
             <Route path="who-are-we" element={<WhoAreWe />} />
           </Route>
