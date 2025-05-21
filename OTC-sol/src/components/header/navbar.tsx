@@ -79,131 +79,60 @@ export default function Navbar() {
 
   return (
     <>
-      <div style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        width: "100vw",
-        maxWidth: "100vw",
-        position: "relative",
-        left: 0,
-        right: 0,
-        margin: 0,
-        padding: 0,
-        background: "#fff"
-      }}>
-        <NavigationMenu style={{ width: "100vw" }}>
-          <NavigationMenuList style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            width: "100vw"
-          }}>
+      <div className="flex justify-center items-center  relative left-0 right-0 m-0 p-0 bg-white">
+        <NavigationMenu className="">
+          <NavigationMenuList className="flex justify-center items-center ">
             {navItems.map((item, idx) => {
               const isActive = selectedIndex === idx;
               const isHovered = hoverIndex === idx;
               const isServices = item.label === "Services";
               const isAboutUs = item.label === "About us";
-              const navItemStyle: React.CSSProperties = {
-                fontSize: "1.25rem",
-                textAlign: "center",
-                position: "relative",
-                background: "none",
-                border: "none",
-                outline: "none",
-                color: isActive || isHovered ? "var(--primary)" : "var(--foreground)",
-                cursor: "pointer",
-                padding: "0.5rem 1.5rem",
-                fontFamily: "inherit",
-                borderBottom: "none",
-                transition: "color 0.2s"
-              };
-              const underlineStyle: React.CSSProperties = {
-                position: "absolute",
-                left: "50%",
-                transform: "translateX(-50%)",
-                bottom: 0,
-                width: "24px",
-                height: "2px",
-                background: isActive ? "var(--primary)" : "transparent",
-                borderRadius: "1px",
-                transition: "background 0.2s"
-              };
+              const navItemStyle = [
+                "text-xl text-center relative bg-none border-none outline-none cursor-pointer px-6 py-2 font-sans transition-colors duration-200",
+                (isActive || isHovered) ? "text-primary" : "text-foreground"
+              ].join(" ");
+              const underlineStyle = [
+                "absolute left-1/2 -translate-x-1/2 bottom-0 w-6 h-0.5 rounded transition-colors duration-200",
+                isActive ? "bg-primary" : "bg-transparent"
+              ].join(" ");
+
               if (isServices) {
                 return (
                   <NavigationMenuItem
                     key={item.label}
                     onMouseEnter={() => setHoverIndex(idx)}
                     onMouseLeave={() => setHoverIndex(null)}
-                    style={{ position: "relative" }}
+                    className="relative"
                   >
                     <NavigationMenuTrigger
-                      style={navItemStyle}
+                      className={navItemStyle}
                       onClick={() => navigate(item.path)}
                     >
                       {item.label}
-                      <span style={underlineStyle}></span>
+                      <span className={underlineStyle}></span>
                     </NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                      <div
-                        style={{
-                          width: "100vw",
-                          left: 0,
-                          right: 0,
-                          position: "relative",
-                          fontSize: "clamp(1rem, 2vw, 1.15rem)",
-                          padding: "2rem 3vw",
-                          background: "#fff",
-                          boxSizing: "border-box"
-                        }}
-                      >
-                        <div
-                          style={{
-                            display: "grid",
-                            gridTemplateColumns: "repeat(auto-fit, minmax(350px, 1fr))",
-                            gap: "2rem",
-                            width: "100%",
-                          }}
-                        >
+                    <NavigationMenuContent
+                      className="absolute left-1/2 -translate-x-1/2 mt-2 w-[90vw] max-w-7xl bg-white shadow-lg rounded-lg z-[1000] p-0"
+                    >
+                      <div className="w-full relative text-base px-[3vw] py-8 bg-white box-border">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
                           {services.map((service, sidx) => (
                             <div key={service.title + sidx}>
                               <div
-                                style={{
-                                  fontWeight: "bold",
-                                  fontSize: "1.1rem",
-                                  cursor: "pointer",
-                                  padding: "0.3rem 0",
-                                  borderRadius: "4px",
-                                  textAlign: "left",
-                                  color: "var(--foreground)",
-                                  background: "inherit",
-                                  transition: "color 0.2s"
-                                }}
+                                className="font-bold text-lg cursor-pointer py-1 rounded text-left text-foreground bg-inherit transition-colors duration-200"
                                 tabIndex={0}
-                                onMouseOver={e => (e.currentTarget.style.color = "var(--primary)")}
-                                onMouseOut={e => (e.currentTarget.style.color = "var(--foreground)")}
+                                onMouseOver={e => (e.currentTarget.classList.add("text-primary"))}
+                                onMouseOut={e => (e.currentTarget.classList.remove("text-primary"))}
                               >
                                 {service.title}
                               </div>
-                              <ul style={{
-                                paddingLeft: "1.2rem",
-                                margin: "0.4rem 0",
-                                listStyle: "disc",
-                                color: "var(--foreground)",
-                                fontFamily: "inherit",
-                              }}>
+                              <ul className="pl-5 my-2 list-disc text-foreground font-sans">
                                 {service.subtopics.map((sub, subIdx) => {
                                   const heading = sub.split("-")[0].trim();
                                   return (
                                     <li
                                       key={subIdx}
-                                      style={{
-                                        marginBottom: "0.3rem",
-                                        color: "var(--foreground)",
-                                        fontWeight: 400,
-                                        fontSize: "clamp(0.95rem, 2vw, 1.05rem)",
-                                        fontFamily: "inherit"
-                                      }}
+                                      className="mb-1 font-normal text-base font-sans"
                                     >
                                       {heading}
                                     </li>
@@ -224,63 +153,30 @@ export default function Navbar() {
                     key={item.label}
                     onMouseEnter={() => setHoverIndex(idx)}
                     onMouseLeave={() => setHoverIndex(null)}
-                    style={{ position: "relative" }}
+                    className="relative"
                   >
                     <NavigationMenuTrigger
-                      style={navItemStyle}
+                      className={navItemStyle}
                       onClick={() => navigate(item.path)}
                     >
                       {item.label}
-                      <span style={underlineStyle}></span>
+                      <span className={underlineStyle}></span>
                     </NavigationMenuTrigger>
                     <NavigationMenuContent
-                      style={{
-                        minWidth: "180px",
-                        width: "max-content",
-                        left: "0",
-                        right: "auto",
-                        transform: "none",
-                        marginTop: "0.5rem",
-                        padding: 0,
-                        background: "#fff",
-                        boxShadow: "0 2px 12px rgba(0,0,0,0.08)",
-                        borderRadius: "8px",
-                        zIndex: 1000,
-                        position: "absolute",
-                      }}
+                      className="absolute left-1/2 -translate-x-1/2 mt-2 min-w-[180px] w-max bg-white shadow-lg rounded-lg z-[1000] p-0"
                     >
-                      <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem", padding: "1rem" }}>
+                      <div className="flex flex-col gap-2 p-4">
                         <div
-                          style={{
-                            fontWeight: 500,
-                            fontSize: "1.05rem",
-                            cursor: "pointer",
-                            padding: "0.4rem 0.75rem",
-                            borderRadius: "4px",
-                            color: "var(--foreground)",
-                            transition: "background 0.2s, color 0.2s"
-                          }}
+                          className="font-medium text-base cursor-pointer px-3 py-2 rounded text-foreground transition-colors duration-200 hover:text-primary"
                           tabIndex={0}
                           onClick={() => navigate("/about-us/team")}
-                          onMouseOver={e => (e.currentTarget.style.color = "var(--primary)")}
-                          onMouseOut={e => (e.currentTarget.style.color = "var(--foreground)")}
                         >
                           Team
                         </div>
                         <div
-                          style={{
-                            fontWeight: 500,
-                            fontSize: "1.05rem",
-                            cursor: "pointer",
-                            padding: "0.4rem 0.75rem",
-                            borderRadius: "4px",
-                            color: "var(--foreground)",
-                            transition: "background 0.2s, color 0.2s"
-                          }}
+                          className="font-medium text-base cursor-pointer px-3 py-2 rounded text-foreground transition-colors duration-200 hover:text-primary"
                           tabIndex={0}
                           onClick={() => navigate("/about-us/who-are-we")}
-                          onMouseOver={e => (e.currentTarget.style.color = "var(--primary)")}
-                          onMouseOut={e => (e.currentTarget.style.color = "var(--foreground)")}
                         >
                           Who Are We
                         </div>
@@ -294,14 +190,14 @@ export default function Navbar() {
                   key={item.label}
                   onMouseEnter={() => setHoverIndex(idx)}
                   onMouseLeave={() => setHoverIndex(null)}
-                  style={{ position: "relative" }}
+                  className="relative"
                 >
                   <NavigationMenuLink
-                    style={navItemStyle}
+                    className={navItemStyle}
                     onClick={() => navigate(item.path)}
                   >
                     {item.label}
-                    <span style={underlineStyle}></span>
+                    <span className={underlineStyle}></span>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
               );
@@ -310,6 +206,5 @@ export default function Navbar() {
         </NavigationMenu>
       </div>
     </>
-  )
+  );
 }
-
