@@ -80,12 +80,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Find the selected index based on the current path
-  const selectedIndex = navItems.findIndex(item =>
-    location.pathname === item.path ||
-    (item.label === "Services" && location.pathname.startsWith("/services"))
-  );
-
   const [hoverIndex, setHoverIndex] = React.useState<number | null>(null);
 
   return (
