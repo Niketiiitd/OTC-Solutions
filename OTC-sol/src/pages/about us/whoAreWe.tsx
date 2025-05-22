@@ -5,18 +5,24 @@ import { useNavigate } from "react-router-dom";
 export default function WhoAreWe() {
   const navigate = useNavigate();
   return (
-    <div className="max-w-6xl mx-auto py-10">
-      {/* Hero Section with Background Image */}
-      <div className="relative flex flex-col items-start justify-left min-h-[60vh] mt-[15%] pl-2 md:pl-8 overflow-hidden rounded-xl">
-        {/* Background Image */}
-        <img
-          src="https://images.unsplash.com/photo-1689338039987-8a2539194e27?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z3VyZ2FvbnxlbnwwfHwwfHx8MA%3D%3D"
-          alt="Welcome OTC Solutions Background"
-          className="absolute inset-0 w-full h-full object-cover z-0"
-          style={{ filter: "brightness(0.30)" }}
-        />
-        {/* Overlay Content */}
-        <div className="relative z-10 w-full">
+    <div className="max-w-6xl mx-auto ">
+      {/* Hero Section with Full-Width Background Image */}
+      <div
+        className="relative w-screen left-1/2 right-1/2 -translate-x-1/2 overflow-hidden rounded-none"
+        style={{ marginTop: 0, paddingTop: 0 }}
+      >
+        <div className="absolute inset-0 w-full h-full z-0">
+          <img
+            src="https://images.unsplash.com/photo-1689338039987-8a2539194e27?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z3VyZ2FvbnwwfHwwfHx8MA%3D%3D"
+            alt="Welcome OTC Solutions Background"
+            className="w-full h-full object-cover"
+            style={{ filter: "brightness(0.30)" }}
+          />
+        </div>
+        <div
+          className="relative z-10 flex flex-col mt-[10%] items-start justify-left min-h-[90vh] pt-0 pl-2 md:pl-8 py-12 max-w-6xl mx-auto"
+          style={{ paddingTop: "calc(env(safe-area-inset-top, 0px) + 64px)" }} // 64px for navbar height
+        >
           <h1 className="text-6xl md:text-7xl font-extrabold text-[oklch(0.623_0.214_259.815)] mb-4 text-left leading-tight">
             WELCOME to OTC SOLUTIONS
           </h1>

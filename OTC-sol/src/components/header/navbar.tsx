@@ -69,6 +69,17 @@ export default function Navbar() {
   const location = useLocation();
   const navigate = useNavigate();
 
+  // Add scroll state for navbar background
+  const [scrolled, setScrolled] = React.useState(false);
+
+  React.useEffect(() => {
+    const onScroll = () => {
+      setScrolled(window.scrollY > 40);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   // Find the selected index based on the current path
   const selectedIndex = navItems.findIndex(item =>
     location.pathname === item.path ||
@@ -79,7 +90,15 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="flex justify-center items-center  relative left-0 right-0 m-0 p-0 bg-white">
+      <div
+        className={[
+          "flex justify-center items-center fixed left-0 right-0 w-full z-50 transition-all duration-300",
+          scrolled
+            ? "bg-white/80 backdrop-blur-md shadow"
+            : "bg-transparent"
+        ].join(" ")}
+        style={{ minHeight: "64px" }}
+      >
         <NavigationMenu className="">
           <NavigationMenuList className="flex justify-center items-center ">
             {navItems.map((item, idx) => {
@@ -122,74 +141,71 @@ export default function Navbar() {
                     </NavigationMenuTrigger>
                     {isHovered && (
                       <div
-                        className="fixed inset-0 flex flex-col items-center justify-start overflow-y-auto z-[2000]"
-                        style={{ top: "64px", background: "rgba(255,255,255,0.95)" }}
+                        className="absolute left-1/2 -translate-x-1/2 mt-2 z-[2000] bg-white rounded-xl shadow-lg p-8 min-w-[800px] max-w-[1200px] border w-full"
                         onMouseEnter={() => setHoverIndex(idx)}
                         onMouseLeave={() => setHoverIndex(null)}
                       >
-                        <div className="w-full max-w-7xl mx-auto px-8 py-12 bg-white shadow-lg rounded-lg border border-[oklch(0.92_0.004_286.32)] mt-4">
-                          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 w-full">
-                            {services.map((service, sidx) => {
-                              // Map service index to correct route path
-                              let servicePath = "";
-                              switch (sidx) {
-                                case 0:
-                                  servicePath = "/services/start-up-new-entity-registrations";
-                                  break;
-                                case 1:
-                                  servicePath = "/services/business-accounting-book-keeping";
-                                  break;
-                                case 2:
-                                  servicePath = "/services/management-reporting-finance-control";
-                                  break;
-                                case 3:
-                                  servicePath = "/services/tax-management";
-                                  break;
-                                case 4:
-                                  servicePath = "/services/payroll-hr-services";
-                                  break;
-                                default:
-                                  servicePath = "/services";
-                              }
-                              const isSectionActive = location.pathname === servicePath;
-                              return (
-                                <div key={service.title + sidx}>
-                                  <div
-                                    className={
-                                      "font-bold text-lg cursor-pointer py-1 rounded text-left bg-inherit transition-colors duration-200 group " +
-                                      (isSectionActive ? "text-[oklch(0.623_0.214_259.815)] border-b-2 border-[oklch(0.623_0.214_259.815)]" : "text-foreground")
-                                    }
-                                    tabIndex={0}
-                                    onClick={() => {
-                                      navigate(servicePath);
-                                      setHoverIndex(null);
-                                    }}
-                                    onMouseOver={e => (e.currentTarget.classList.add("text-[oklch(0.623_0.214_259.815)]"))}
-                                    onMouseOut={e => (e.currentTarget.classList.remove("text-[oklch(0.623_0.214_259.815)]"))}
-                                  >
-                                    {service.title}
-                                  </div>
-                                  <ul className="pl-5 my-2 list-disc text-foreground font-sans">
-                                    {service.subtopics.map((sub, subIdx) => {
-                                      const heading = sub.split("-")[0].trim();
-                                      return (
-                                        <li
-                                          key={subIdx}
-                                          className="mb-1 font-normal text-base font-sans cursor-pointer transition-colors duration-200 hover:text-[oklch(0.623_0.214_259.815)]"
-                                          tabIndex={0}
-                                          // No navigation for subtopic, only highlight on hover
-                                          onMouseOver={e => (e.currentTarget.classList.add("text-[oklch(0.623_0.214_259.815)]"))}
-                                          onMouseOut={e => (e.currentTarget.classList.remove("text-[oklch(0.623_0.214_259.815)]"))}
-                                        >
-                                          {heading}
-                                        </li>
-                                      );
-                                    })}
-                                  </ul>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
+                          {services.map((service, sidx) => {
+                            // Map service index to correct route path
+                            let servicePath = "";
+                            switch (sidx) {
+                              case 0:
+                                servicePath = "/services/start-up-new-entity-registrations";
+                                break;
+                              case 1:
+                                servicePath = "/services/business-accounting-book-keeping";
+                                break;
+                              case 2:
+                                servicePath = "/services/management-reporting-finance-control";
+                                break;
+                              case 3:
+                                servicePath = "/services/tax-management";
+                                break;
+                              case 4:
+                                servicePath = "/services/payroll-hr-services";
+                                break;
+                              default:
+                                servicePath = "/services";
+                            }
+                            const isSectionActive = location.pathname === servicePath;
+                            return (
+                              <div key={service.title + sidx}>
+                                <div
+                                  className={
+                                    "font-bold text-lg cursor-pointer py-1 rounded text-left bg-inherit transition-colors duration-200 group " +
+                                    (isSectionActive ? "text-[oklch(0.623_0.214_259.815)] border-b-2 border-[oklch(0.623_0.214_259.815)]" : "text-foreground")
+                                  }
+                                  tabIndex={0}
+                                  onClick={() => {
+                                    navigate(servicePath);
+                                    setHoverIndex(null);
+                                  }}
+                                  onMouseOver={e => (e.currentTarget.classList.add("text-[oklch(0.623_0.214_259.815)]"))}
+                                  onMouseOut={e => (e.currentTarget.classList.remove("text-[oklch(0.623_0.214_259.815)]"))}
+                                >
+                                  {service.title}
                                 </div>
-                              );
-                            })}
-                          </div>
+                                <ul className="pl-5 my-2 list-disc text-foreground font-sans">
+                                  {service.subtopics.map((sub, subIdx) => {
+                                    const heading = sub.split("-")[0].trim();
+                                    return (
+                                      <li
+                                        key={subIdx}
+                                        className="mb-1 font-normal text-base font-sans cursor-pointer transition-colors duration-200 hover:text-[oklch(0.623_0.214_259.815)]"
+                                        tabIndex={0}
+                                        // No navigation for subtopic, only highlight on hover
+                                        onMouseOver={e => (e.currentTarget.classList.add("text-[oklch(0.623_0.214_259.815)]"))}
+                                        onMouseOut={e => (e.currentTarget.classList.remove("text-[oklch(0.623_0.214_259.815)]"))}
+                                      >
+                                        {heading}
+                                      </li>
+                                    );
+                                  })}
+                                </ul>
+                              </div>
+                            );
+                          })}
                         </div>
                       </div>
                     )}
@@ -215,9 +231,14 @@ export default function Navbar() {
                       <span className={underlineStyle}></span>
                     </NavigationMenuTrigger>
                     <NavigationMenuContent
-                      className="absolute left-1/2 -translate-x-1/2 mt-2 min-w-[180px] w-max bg-white shadow-lg rounded-lg z-[1000] p-0"
+                      className="absolute left-1/2 -translate-x-1/2 min-w-[180px] w-max bg-white shadow-lg rounded-lg z-[1000] p-0"
+                      style={{
+                        background: "#fff",
+                        backdropFilter: "none",
+                        border: "none"
+                      }}
                     >
-                      <div className="flex flex-col p-4">
+                      <div className="mt-3 mb-3">
                         {[
                           { label: "Team", path: "/about-us/team" },
                           { label: "Who Are We", path: "/about-us/who-are-we" }
@@ -227,7 +248,7 @@ export default function Navbar() {
                             <div
                               key={subIdx}
                               className={
-                                "font-medium text-base cursor-pointer px-3 py-2 rounded transition-colors duration-200 hover:text-primary relative flex justify-center items-center " +
+                                "font-medium text-base cursor-pointer px-1 py-1 rounded transition-colors duration-200 hover:text-primary relative flex justify-center items-center " +
                                 (isSubActive ? "text-[oklch(0.623_0.214_259.815)]" : "text-foreground")
                               }
                               tabIndex={0}
