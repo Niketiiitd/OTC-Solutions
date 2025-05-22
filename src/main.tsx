@@ -1,7 +1,7 @@
 // src/main.tsx or src/index.tsx
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { Navigate, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import WebLayout from './components/layouts/WebLayout';
 import './index.css';
 
@@ -49,8 +49,8 @@ if (!rootElement) throw new Error("Root element not found");
 
 ReactDOM.createRoot(rootElement).render(
   <React.StrictMode>
-    
+    <BrowserRouter>
       <App />
-   
+    </BrowserRouter>
   </React.StrictMode>
 );
