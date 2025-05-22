@@ -23,7 +23,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<WebLayout />}>
-        <Route index element={<Navigate to="/about-us/who-are-we" replace />} />
+        
         <Route path="about-us">
           <Route index element={<WhoAreWe />} />
           <Route path="team" element={<Team />} />
