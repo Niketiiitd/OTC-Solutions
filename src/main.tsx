@@ -1,7 +1,7 @@
 // src/main.tsx or src/index.tsx
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import WebLayout from './components/layouts/WebLayout';
 import './index.css';
 
@@ -23,7 +23,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<WebLayout />}>
-        
+        <Route index element={<WhoAreWe />} />
         <Route path="about-us">
           <Route index element={<WhoAreWe />} />
           <Route path="team" element={<Team />} />
