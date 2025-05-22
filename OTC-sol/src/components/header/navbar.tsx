@@ -130,9 +130,27 @@ export default function Navbar() {
                         <div className="w-full max-w-7xl mx-auto px-8 py-12 bg-white shadow-lg rounded-lg border border-[oklch(0.92_0.004_286.32)] mt-4">
                           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 w-full">
                             {services.map((service, sidx) => {
-                              const servicePath = `/services/${service.title
-                                .toLowerCase()
-                                .replace(/[^a-z0-9]+/g, "-")}`;
+                              // Map service index to correct route path
+                              let servicePath = "";
+                              switch (sidx) {
+                                case 0:
+                                  servicePath = "/services/start-up-new-entity-registrations";
+                                  break;
+                                case 1:
+                                  servicePath = "/services/business-accounting-book-keeping";
+                                  break;
+                                case 2:
+                                  servicePath = "/services/management-reporting-finance-control";
+                                  break;
+                                case 3:
+                                  servicePath = "/services/tax-management";
+                                  break;
+                                case 4:
+                                  servicePath = "/services/payroll-hr-services";
+                                  break;
+                                default:
+                                  servicePath = "/services";
+                              }
                               const isSectionActive = location.pathname === servicePath;
                               return (
                                 <div key={service.title + sidx}>
