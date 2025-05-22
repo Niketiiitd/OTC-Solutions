@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import WebLayout from './components/layouts/WebLayout';
 import './index.css';
 
@@ -24,6 +24,7 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<WebLayout />}>
+          <Route index element={<Navigate to="/about-us/who-are-we" replace />} />
           <Route path="about-us">
             <Route index element={<WhoAreWe />} />
             <Route path="team" element={<Team />} />

@@ -1,6 +1,7 @@
+import Footer from "@/components/footer/Footer";
 import Navbar from "@/components/header/navbar";
 import React from "react";
-import { FaEnvelope, FaFacebook, FaInstagram, FaLinkedin, FaPhoneAlt } from "react-icons/fa";
+import { FaEnvelope, FaFacebook, FaInstagram, FaLinkedin, FaPhoneAlt, FaTwitter } from "react-icons/fa";
 import { Outlet } from "react-router-dom";
 
 function TopBar() {
@@ -36,6 +37,9 @@ function TopBar() {
                 <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-[oklch(0.623_0.214_259.815)] transition-colors">
                     <FaFacebook size={18} />
                 </a>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-[oklch(0.623_0.214_259.815)] transition-colors">
+                    <FaTwitter size={18} />
+                </a>
             </div>
         </div>
     );
@@ -47,6 +51,7 @@ export default function WebLayout() {
             <TopBar />
             <Navbar />
             <Outlet />
+            <Footer />
         </>
     )
 }

@@ -5,12 +5,17 @@ export default function ServiceManagementReporting() {
   return (
     <div className="w-full">
       {/* Banner Image */}
-      <div className="w-full h-64 md:h-80 lg:h-96 overflow-hidden">
+      <div className="w-full h-64 md:h-80 lg:h-96 overflow-hidden relative">
         <img
           src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80"
           alt="Management Reporting & Finance Control Banner"
           className="w-full h-full object-cover"
         />
+        <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+          <h1 className="text-4xl md:text-6xl font-extrabold text-white text-center drop-shadow-lg">
+            Management Reporting & Finance Control
+          </h1>
+        </div>
       </div>
       {/* Heading */}
       <div className="w-full max-w-7xl mx-auto px-2 md:px-6 pt-10 flex">
