@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import {  HashRouter, Navigate, Route, Routes } from 'react-router-dom';
 import WebLayout from './components/layouts/WebLayout';
 import './index.css';
 
@@ -53,8 +53,8 @@ if (!rootElement) {
 
 ReactDOM.createRoot(rootElement).render(
   <React.StrictMode>
-    <BrowserRouter>
+     <HashRouter>
       <App />
-    </BrowserRouter>
+    </ HashRouter>
   </React.StrictMode>,
 );
