@@ -4,12 +4,11 @@ import { Textarea } from "@/components/ui/textarea";
 
 export default function ContactUs() {
   return (
-    <div className="">
-      <div className="flex flex-col md:flex-row gap-8 mb-8 mx-[15%] py-10 px-4  ">
+    <div className="pt-16 md:pt-0">
+      <div className="flex flex-col md:flex-row gap-8 mb-8 mx-4 md:mx-[15%] py-6 md:py-10 px-4">
         {/* Left: Address & Contact Info */}
-   
         <div className="flex-1">
-          <h2 className="text-7xl text-[oklch(0.623_0.214_259.815)] mb-6 text-left mt-[30%]">Get in touch</h2>
+          <h2 className="text-4xl md:text-7xl text-[oklch(0.623_0.214_259.815)] mb-6 text-left mt-8 md:mt-[30%]">Get in touch</h2>
           <div className="mb-4 text-lg text-gray-700 font-semibold">LEAVE US A MESSAGE</div>
           {/* Head Office */}
           <div className="mb-4">
@@ -50,8 +49,8 @@ export default function ContactUs() {
           </div>
         </div>
         {/* Right: Google Map & Form */}
-        <div className="flex-1 flex flex-col gap-8 border mt-[10%]">
-          <form className="space-y-4 bg-white p-6 rounded-xl mt-8">
+        <div className="flex-1 flex flex-col gap-8 border md:mt-[10%]">
+          <form className="space-y-4 bg-white p-6 rounded-xl mt-4 md:mt-8">
             <h2 className="text-2xl font-semibold mb-2">Leave Us a Message</h2>
             <div>
               <label className="block mb-1 font-medium" htmlFor="name">Name</label>
@@ -74,7 +73,7 @@ export default function ContactUs() {
         </div>
       </div>
       <hr className="my-8" />
-      <div className="w-full h-[400px] rounded-xl overflow-hidden">
+      <div className="w-full h-[300px] md:h-[400px] rounded-none md:rounded-xl overflow-hidden">
         <iframe
           title="OTC Solutions Gurugram Office"
           src="https://www.google.com/maps?q=ILD+Trade+Centre,+Sohna+Road,+Gurgaon,+Haryana,+India&output=embed"

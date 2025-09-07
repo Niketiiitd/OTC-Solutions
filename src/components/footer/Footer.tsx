@@ -1,4 +1,3 @@
-import { useCallback } from "react";
 import { FaEnvelope, FaFacebook, FaInstagram, FaLinkedin, FaPhoneAlt, FaTwitter } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
@@ -62,23 +61,8 @@ const services = [
   }
 ];
 
-function useScrollToTopOnNavigate() {
-  const navigate = useNavigate();
-  return useCallback(
-    (path: string) => {
-      navigate(path);
-      setTimeout(() => {
-        if (typeof window !== "undefined") {
-          window.scrollTo(0, 0);
-        }
-      }, 0);
-    },
-    [navigate]
-  );
-}
-
 export default function Footer() {
-  const scrollNavigate = useScrollToTopOnNavigate();
+  const navigate = useNavigate();
   return (
     <footer className="relative w-full mt-16">
       {/* Background Image */}
@@ -91,54 +75,54 @@ export default function Footer() {
         />
       </div>
       {/* Overlay Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 py-12 flex flex-col md:flex-row gap-12 text-white">
-        {/* Services and Explore More */}
-        <div className="flex-1 flex flex-col">
-          {/* Services Row */}
-          <h1 className="text-5xl mb-8 text-[oklch(0.623_0.214_259.815)]">Services</h1>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 py-12 flex flex-col gap-12 text-white">
+        {/* Mobile view: Logo at top */}
+        <div className="flex justify-center md:hidden">
+          <img
+            src="/logo.png"
+            alt="OTC Solutions Logo"
+            className="w-48 h-auto mb-8"
+          />
+        </div>
+
+        {/* Services Section - Responsive Grid */}
+        <div>
+          <h1 className="text-4xl md:text-5xl mb-8 text-center md:text-left">Services</h1>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
             {services.map((service, idx) => (
-              <div key={idx}>
+              <div key={idx} className="mb-6">
                 <button
-                  className="text-lg font-semibold hover:underline hover:text-[oklch(0.623_0.214_259.815)] transition-colors"
-                  onClick={() => scrollNavigate(service.path)}
+                  className="text-base md:text-lg font-semibold hover:underline hover:text-[oklch(0.623_0.214_259.815)] transition-colors text-left"
+                  onClick={() => navigate(service.path)}
                 >
                   {service.label}
                 </button>
-                <ul className="pl-6 mt-1 space-y-1 list-disc">
+                <ul className="pl-4 mt-1 space-y-1 list-disc">
                   {service.subtopics.map((sub, subIdx) => (
                     <li
                       key={subIdx}
-                      className="text-base text-gray-200 hover:text-[oklch(0.623_0.214_259.815)] cursor-pointer transition-colors"
+                      className="text-sm md:text-base text-gray-200 hover:text-[oklch(0.623_0.214_259.815)] cursor-pointer transition-colors"
                     >
-                      {sub}
+                      {sub.length > 40 ? sub.substring(0, 40) + '...' : sub}
                     </li>
                   ))}
                 </ul>
               </div>
             ))}
           </div>
-          {/* Explore More Row */}
-          
         </div>
-        {/* Logo and Social */}
-        <div className="flex flex-col items-end justify-between flex-shrink-0 w-full md:w-80">
-          <div className="mb-8 flex flex-col items-end">
-            <img
-              src="/logo.png"
-              alt="OTC Solutions Logo"
-              className="w-56 h-auto mb-6"
-              style={{ maxWidth: "320px" }}
-            />
-          </div>
-          <div className="">
-            <h3 className="text-2xl font-bold mb-4 text-[oklch(0.623_0.214_259.815)]">Explore More</h3>
-            <ul className="flex flex-wrap gap-8">
+
+        {/* Explore & Social Media - Responsive Layout */}
+        <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-8">
+          {/* Explore More */}
+          <div className="w-full md:w-auto">
+            <h3 className="text-xl font-bold mb-4 text-[oklch(0.623_0.214_259.815)] text-center md:text-left">Explore More</h3>
+            <ul className="flex flex-wrap justify-center md:justify-start gap-4 md:gap-8">
               {navItems.map((item, idx) => (
                 <li key={idx}>
                   <button
-                    className="text-lg hover:underline hover:text-[oklch(0.623_0.214_259.815)] transition-colors"
-                    onClick={() => scrollNavigate(item.path)}
+                    className="text-base hover:underline hover:text-[oklch(0.623_0.214_259.815)] transition-colors"
+                    onClick={() => navigate(item.path)}
                   >
                     {item.label}
                   </button>
@@ -146,28 +130,62 @@ export default function Footer() {
               ))}
             </ul>
           </div>
-          <div className="flex items-center gap-6">
+
+          {/* Logo and Social - Desktop Only */}
+          <div className="hidden md:flex flex-col items-end justify-between">
+            <div className="mb-8 flex flex-col items-end">
+              <img
+                src="/logo.png"
+                alt="OTC Solutions Logo"
+                className="w-56 h-auto mb-6"
+              />
+            </div>
+            <div className="flex items-center gap-6">
+              <a href="tel:+919876543210" className="hover:text-[oklch(0.623_0.214_259.815)] transition-colors">
+                <FaPhoneAlt size={28} />
+              </a>
+              <a href="mailto:support@otcsolutions.com" className="hover:text-[oklch(0.623_0.214_259.815)] transition-colors">
+                <FaEnvelope size={28} />
+              </a>
+              <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-[oklch(0.623_0.214_259.815)] transition-colors">
+                <FaLinkedin size={28} />
+              </a>
+              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-[oklch(0.623_0.214_259.815)] transition-colors">
+                <FaInstagram size={28} />
+              </a>
+              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-[oklch(0.623_0.214_259.815)] transition-colors">
+                <FaFacebook size={28} />
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-[oklch(0.623_0.214_259.815)] transition-colors">
+                <FaTwitter size={28} />
+              </a>
+            </div>
+          </div>
+          
+          {/* Mobile Social Icons */}
+          <div className="flex md:hidden justify-center gap-6 w-full">
             <a href="tel:+919876543210" className="hover:text-[oklch(0.623_0.214_259.815)] transition-colors">
-              <FaPhoneAlt size={28} />
+              <FaPhoneAlt size={24} />
             </a>
             <a href="mailto:support@otcsolutions.com" className="hover:text-[oklch(0.623_0.214_259.815)] transition-colors">
-              <FaEnvelope size={28} />
+              <FaEnvelope size={24} />
             </a>
             <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-[oklch(0.623_0.214_259.815)] transition-colors">
-              <FaLinkedin size={28} />
+              <FaLinkedin size={24} />
             </a>
             <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-[oklch(0.623_0.214_259.815)] transition-colors">
-              <FaInstagram size={28} />
+              <FaInstagram size={24} />
             </a>
             <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-[oklch(0.623_0.214_259.815)] transition-colors">
-              <FaFacebook size={28} />
+              <FaFacebook size={24} />
             </a>
             <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-[oklch(0.623_0.214_259.815)] transition-colors">
-              <FaTwitter size={28} />
+              <FaTwitter size={24} />
             </a>
           </div>
         </div>
       </div>
+      
       {/* Copyright */}
       <div className="relative z-10 text-center text-gray-300 py-4 bg-black/40">
         © {new Date().getFullYear()} OTC Solutions. All rights reserved.
