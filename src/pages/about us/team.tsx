@@ -14,7 +14,7 @@ const teamMembers = [
   {
     name: "CA Aman Agrawal",
     image: "https://res.cloudinary.com/dzktnqqdx/image/upload/v1757259653/Aman_Singhal_vj0lrz.jpg",
-    title: "Fellow Chartered Accountant",
+    title: "Founding Member & Managing Partner",
     about:
       "Aman Agrawal is a Fellow Chartered Accountant, has over 10 years of specialized experience in audit and assurance. Renowned for his expertise in audit and assurance, he has worked with domestic & multinational companies across diverse sectors, including services, education, manufacturing, retail, IT/ITES, utilities, and non-profit organizations.",
     extra:
