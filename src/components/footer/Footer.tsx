@@ -58,6 +58,17 @@ const services = [
       "TA Associate Services",
       "Recruitment Process Outsourcing",
     ]
+  },
+  {
+    label: "Entry Strategies for Foreign Companies in India",
+    path: "/services/entry-strategies-foreign-companies",
+    subtopics: [
+      "Liaison, Branch & Project Office",
+      "Wholly Owned Subsidiary (WOS)",
+      "Joint Venture (JV) & LLP",
+      "Franchising, Licensing, Distribution",
+      "FDI Routes & Key Considerations"
+    ]
   }
 ];
 

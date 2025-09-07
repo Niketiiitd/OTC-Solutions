@@ -98,10 +98,8 @@ export default function Navbar() {
     <>
       <div
   className={[
-    "flex flex-row items-center fixed left-4 right-0 w-full z-50 transition-all duration-300", // added justify-between
-    scrolled
-      ? "bg-white/80 backdrop-blur-md shadow"
-      : "bg-transparent"
+    "flex flex-row items-center fixed right-0 w-full z-50 transition-all duration-300",
+    "bg-white/80 backdrop-blur-md shadow" // Always translucent white background
   ].join(" ")}
   style={{ minHeight: "64px" }}
 >
