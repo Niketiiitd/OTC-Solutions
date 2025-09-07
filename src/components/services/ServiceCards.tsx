@@ -29,6 +29,12 @@ const services = [
     desc: "Payroll processing, labour law compliance, talent search, recruitment, and complete talent acquisition services.",
     path: "/services/payroll-hr-services",
   },
+  {
+    iconImg: "/icons/india-entry.svg", // Use a suitable icon or placeholder
+    title: "Entry Strategies for Foreign Companies in India",
+    desc: "Explore all entry options for foreign companies: liaison/branch/project office, subsidiaries, JVs, FDI, and more.",
+    path: "/services/entry-strategies-foreign-companies",
+  },
 ];
 
 import { useCallback } from "react";

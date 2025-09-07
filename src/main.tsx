@@ -13,6 +13,7 @@ import Services from '@/pages/Services';
 import WhyUs from '@/pages/WhyUs';
 
 // Service Pages
+import EntryStrategiesForeignCompanies from '@/pages/services/EntryStrategiesForeignCompanies';
 import ServiceBookKeeping from '@/pages/services/ServiceBookKeeping';
 import ServiceManagementReporting from '@/pages/services/ServiceManagementReporting';
 import ServicePayrollHR from '@/pages/services/ServicePayrollHR';
@@ -36,6 +37,7 @@ function App() {
           <Route path="management-reporting-finance-control" element={<ServiceManagementReporting />} />
           <Route path="tax-management" element={<ServiceTaxManagement />} />
           <Route path="payroll-hr-services" element={<ServicePayrollHR />} />
+          <Route path="entry-strategies-foreign-companies" element={<EntryStrategiesForeignCompanies />} />
         </Route>
         <Route path="why-us" element={<WhyUs />} />
         <Route path="contact-us" element={<ContactUs />} />

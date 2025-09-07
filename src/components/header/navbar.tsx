@@ -55,10 +55,22 @@ const services = [
       "TA Associate Services- Conduct telephonic interview and assessment, for middle & junior level positions.",
       "Recruitment Process- Outsourcing- Manage complete Talent Acquisition services for projects."
     ]
+  },
+  {
+    title: "Entry Strategies for Foreign Companies in India",
+    subtopics: [
+      "Non-Corporate Presence (Liaison / Branch / Project Office)",
+      "Incorporated Entities",
+      "Contractual / Non-Equity Modes",
+      "Foreign Direct Investment (FDI) Routes",
+      "Key Considerations",
+      "Recommendation"
+    ]
   }
 ];
 
 const navItems = [
+  { label: "Home", path: "/" }, // Added Home
   { label: "About us", path: "/about-us" },
   { label: "Services", path: "/services" },
   { label: "Why us", path: "/why-us" },
@@ -85,16 +97,28 @@ export default function Navbar() {
   return (
     <>
       <div
-        className={[
-          "flex justify-center items-center fixed left-0 right-0 w-full z-50 transition-all duration-300",
-          scrolled
-            ? "bg-white/80 backdrop-blur-md shadow"
-            : "bg-transparent"
-        ].join(" ")}
-        style={{ minHeight: "64px" }}
-      >
-        <NavigationMenu className="">
-          <NavigationMenuList className="flex justify-center items-center ">
+  className={[
+    "flex flex-row items-center fixed left-4 right-0 w-full z-50 transition-all duration-300", // added justify-between
+    scrolled
+      ? "bg-white/80 backdrop-blur-md shadow"
+      : "bg-transparent"
+  ].join(" ")}
+  style={{ minHeight: "64px" }}
+>
+        {/* OTC Logo and Brand */}
+        <div className="flex items-center ml-6">
+          <button
+            className="flex items-center gap-2 px-2 py-1 rounded focus:outline-none focus:ring-2 focus:ring-blue-400 bg-transparent border-0"
+            style={{ background: "none" }}
+            onClick={() => navigate("/")}
+            aria-label="Go to home"
+          >
+            {/* <img src={otcLogo} alt="OTC Solutions Logo" className="h-9 w-9" style={{ minWidth: 36, minHeight: 36 }} /> */}
+            <span className="text-xl font-bold text-[oklch(0.623_0.214_259.815)] select-none">OTC Solutions</span>
+          </button>
+        </div>
+        <NavigationMenu className="mr-12">
+  <NavigationMenuList className="flex justify-between items-center ">
             {navItems.map((item, idx) => {
               const isServices = item.label === "Services";
               const isAboutUs = item.label === "About us";
@@ -115,6 +139,26 @@ export default function Navbar() {
                 "pointer-events-none absolute left-1/2 -translate-x-1/2 bottom-0 h-0.5 rounded transition-colors duration-200",
                 isActive ? "bg-[oklch(0.623_0.214_259.815)] w-8" : "bg-transparent w-8"
               ].join(" ");
+
+              // Home nav item (no dropdown)
+              if (item.label === "Home") {
+                return (
+                  <NavigationMenuItem
+                    key={item.label}
+                    onMouseEnter={() => setHoverIndex(idx)}
+                    onMouseLeave={() => setHoverIndex(null)}
+                    className="relative"
+                  >
+                    <NavigationMenuLink
+                      className={navItemStyle}
+                      onClick={() => navigate(item.path)}
+                    >
+                      {item.label}
+                      <span className={underlineStyle}></span>
+                    </NavigationMenuLink>
+                  </NavigationMenuItem>
+                );
+              }
 
               if (isServices) {
                 return (
@@ -158,6 +202,9 @@ export default function Navbar() {
                                 break;
                               case 4:
                                 servicePath = "/services/payroll-hr-services";
+                                break;
+                              case 5:
+                                servicePath = "/services/entry-strategies-foreign-companies";
                                 break;
                               default:
                                 servicePath = "/services";

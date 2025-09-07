@@ -24,7 +24,7 @@ export default function WhoAreWe() {
           style={{ paddingTop: "calc(env(safe-area-inset-top, 0px) + 64px)" }} // 64px for navbar height
         >
           <h1 className="text-6xl md:text-7xl font-extrabold text-[oklch(0.623_0.214_259.815)] mb-4 text-left leading-tight">
-            WELCOME to OTC SOLUTIONS
+            WELCOME to OTC Financial Services
           </h1>
           <div className="w-32 h-1 bg-[oklch(0.623_0.214_259.815)] rounded-full mb-4"></div>
           <h2 className="text-xl md:text-2xl font-semibold text-left mb-2 text-gray-100">
