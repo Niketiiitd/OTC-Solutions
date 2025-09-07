@@ -22,7 +22,7 @@ const teamMembers = [
   },
   {
     name: "CA Ruchi Kapoor",
-    image: "/assets/team/ruchi.jpg",
+    image: "https://res.cloudinary.com/dzktnqqdx/image/upload/v1757260209/WhatsApp_Image_2025-09-07_at_21.18.40_yrvvcy.jpg",
     title: "Chartered Accountant",
     about:
       "Ruchi Kapoor is a Chartered Accountant, has over 10 years of specialized experience in Taxation & Compliance.",
