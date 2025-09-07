@@ -4,7 +4,7 @@ import { Card, Image } from "@heroui/react";
 const teamMembers = [
   {
     name: "CFA Gajanand Garg",
-    image: "https://heroui.com/images/hero-card.jpeg",
+    image: "https://res.cloudinary.com/dzktnqqdx/image/upload/v1757259712/GNGARG_uknqod.jpg",
     title: "Founding Member & Managing Partner",
     about:
       "Gajanand Garg is founding member & Managing Partner at OTC with an experience of 18 years in managing Finance, compliance & taxation matters. He has visionary line of thinking aim to revolutionize the outsourced industry with his out of Box thinking and believe in knowledge sharing.",
@@ -13,7 +13,7 @@ const teamMembers = [
   },
   {
     name: "CA Aman Agrawal",
-    image: "https://heroui.com/images/hero-card.jpeg",
+    image: "https://res.cloudinary.com/dzktnqqdx/image/upload/v1757259653/Aman_Singhal_vj0lrz.jpg",
     title: "Fellow Chartered Accountant",
     about:
       "Aman Agrawal is a Fellow Chartered Accountant, has over 10 years of specialized experience in audit and assurance. Renowned for his expertise in audit and assurance, he has worked with domestic & multinational companies across diverse sectors, including services, education, manufacturing, retail, IT/ITES, utilities, and non-profit organizations.",
@@ -22,7 +22,7 @@ const teamMembers = [
   },
   {
     name: "CA Ruchi Kapoor",
-    image: "https://heroui.com/images/hero-card.jpeg",
+    image: "/assets/team/ruchi.jpg",
     title: "Chartered Accountant",
     about:
       "Ruchi Kapoor is a Chartered Accountant, has over 10 years of specialized experience in Taxation & Compliance.",
@@ -31,7 +31,7 @@ const teamMembers = [
   },
   {
     name: "CA Rachit Bansal",
-    image: "https://heroui.com/images/hero-card.jpeg",
+    image: "https://res.cloudinary.com/dzktnqqdx/image/upload/v1757259718/Rachit_ostqst.jpg",
     title: "Advisor, Risk Advisory & International Business",
     about:
       "Rachit Bansal is an Advisor at OTC Financial Services, where he leads the Risk Advisory Services and International Business verticals.",
@@ -40,7 +40,7 @@ const teamMembers = [
   },
   {
     name: "CA Jaiwish Rajpal",
-    image: "https://heroui.com/images/hero-card.jpeg",
+    image: "https://res.cloudinary.com/dzktnqqdx/image/upload/v1757259707/Jaiwish_bdxgkn.jpg",
     title: "Chartered Accountant",
     about:
       "Jaiwish Rajpal is a Chartered Accountant with over 8 years of specialized experience in Taxation and Compliance.",
@@ -49,7 +49,7 @@ const teamMembers = [
   },
   {
     name: "CA Pradeep Singh",
-    image: "https://heroui.com/images/hero-card.jpeg",
+    image: "https://res.cloudinary.com/dzktnqqdx/image/upload/v1757259718/Pradeep_xjzjtv.jpg",
     title: "Chartered Accountant",
     about:
       "CA Pradeep is a Chartered Accountant, has over 12 years of specialized experience in Audit, Assurance, Regulatory & Compliance.",
@@ -58,7 +58,7 @@ const teamMembers = [
   },
   {
     name: "Mayank Gupta (B. Com. L.L.B)",
-    image: "https://heroui.com/images/hero-card.jpeg",
+    image: "https://res.cloudinary.com/dzktnqqdx/image/upload/v1757259708/Mayank_g8frgd.jpg",
     title: "Advocate & Taxation Consultant",
     about:
       "Mayank Gupta is a seasoned Advocate and Taxation Consultant with over 15 years of extensive experience in handling complex legal and compliance matters related to Goods and Services Tax (GST), Income Tax, and other financial regulations in India.",
@@ -85,7 +85,7 @@ export default function Team() {
                 <Image
                   alt={member.name}
                   className="object-cover"
-                  height={200}
+                  height={350}
                   width={200}
                   src={member.image}
                 />
