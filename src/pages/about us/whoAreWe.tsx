@@ -24,7 +24,7 @@ export default function WhoAreWe() {
           style={{ paddingTop: "calc(env(safe-area-inset-top, 0px) + 64px)" }} // 64px for navbar height
         >
           <h1 className="text-6xl md:text-7xl font-extrabold text-[oklch(0.623_0.214_259.815)] mb-4 text-left leading-tight">
-            WELCOME to OTC Financial Services
+            WELCOME TO OTC FINANCIAL SERVICES
           </h1>
           <div className="w-32 h-1 bg-[oklch(0.623_0.214_259.815)] rounded-full mb-4"></div>
           <h2 className="text-xl md:text-2xl font-semibold text-left mb-2 text-gray-100">
@@ -49,7 +49,7 @@ export default function WhoAreWe() {
           <h2 className="text-6xl font-bold text-[oklch(0.623_0.214_259.815)] mb-4">Who are we</h2>
           <div className="space-y-5 text-base text-gray-700">
             <p>
-              OTC Solutions started in 2022 with vision to partnering with your business as back office over-the-counter finance & accounting Advisory solution so that our clients focus on strategic expansion of their business.
+              OTC Solutions started in 2012 with vision to partnering with your business as back office over-the-counter finance & accounting Advisory solution so that our clients focus on strategic expansion of their business.
             </p>
             <p>
               The management team comprises of professionals with several years of experience in the area of accounting and auditing. OTC Solutions provide seamless cost effective & affordable supports in Accounts & Finance Controls.

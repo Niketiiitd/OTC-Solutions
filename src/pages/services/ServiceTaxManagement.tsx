@@ -17,46 +17,60 @@ export default function ServiceTaxManagement() {
           </h1>
         </div>
       </div>
-      {/* Heading */}
-      <div className="w-full max-w-7xl mx-auto px-2 md:px-6 pt-10 flex">
-        <h1 className="w-full text-4xl md:text-6xl font-extrabold mb-8 text-center text-[oklch(0.623_0.214_259.815)]">
-          Tax Management
-        </h1>
-      </div>
+       <div className="h-8 md:h-12"></div>
       {/* Content and Form Side by Side */}
       <div className="w-full max-w-7xl mx-auto px-2 md:px-6 pb-10 flex flex-col lg:flex-row gap-12">
         <div className="flex-1 flex flex-col">
-          <div className="space-y-6 text-lg text-gray-800 w-full">
-            <p>
-              <strong>Comprehensive Tax Management Solutions for Your Business</strong>
+          <div className="space-y-6 text-lg text-gray-800 w-full text-justify">
+            <p className="font-semibold text-[oklch(0.623_0.214_259.815)] text-xl">
+              Comprehensive Tax Management Solutions for Your Business
             </p>
-            <ul className="list-disc pl-6 space-y-2">
-              <li>
-                <strong>Annual Financial Statement</strong> – Financial Statement as per GAAP for tax filing purposes & stakeholders.
-              </li>
-              <li>
-                <strong>Corporate Tax Returns</strong> – Preparation of annual corporate tax returns for filing with revenue authorities.
-              </li>
-              <li>
-                <strong>Indirect Tax</strong> – We handle VAT, GST, Sales Tax, etc., to reduce attribution errors and costs, ensuring indirect taxes are managed correctly.
-              </li>
-              <li>
-                <strong>Withholding Tax</strong> – Withholding tax management & filing with revenue authorities.
-              </li>
-            </ul>
-            {/* Extended content */}
-            <p>
-              <strong>Tax Planning & Advisory</strong> – Our experts provide strategic tax planning to optimize your tax position and ensure compliance with ever-changing regulations.
-            </p>
-            <p>
-              <strong>Representation & Litigation Support</strong> – We represent clients before tax authorities and provide support during audits, assessments, and litigation.
-            </p>
-            <p>
-              <strong>International Taxation</strong> – Guidance on cross-border transactions, transfer pricing, and double taxation avoidance agreements (DTAA).
-            </p>
-            <p>
-              <strong>Confidentiality & Data Security</strong> – All tax data is managed with strict confidentiality and robust security protocols, ensuring your sensitive information is always protected.
-            </p>
+            <div>
+              <h2 className="font-bold text-2xl text-[oklch(0.623_0.214_259.815)] mb-2">
+                Our Services
+              </h2>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>
+                  <span className="font-semibold text-lg text-gray-900">Annual Financial Statement</span>
+                  <span className="ml-2">– Financial Statement as per GAAP for tax filing purposes & stakeholders.</span>
+                </li>
+                <li>
+                  <span className="font-semibold text-lg text-gray-900">Corporate Tax Returns</span>
+                  <span className="ml-2">– Preparation of annual corporate tax returns for filing with revenue authorities.</span>
+                </li>
+                <li>
+                  <span className="font-semibold text-lg text-gray-900">Indirect Tax</span>
+                  <span className="ml-2">– We handle VAT, GST, Sales Tax, etc., to reduce attribution errors and costs, ensuring indirect taxes are managed correctly.</span>
+                </li>
+                <li>
+                  <span className="font-semibold text-lg text-gray-900">Withholding Tax</span>
+                  <span className="ml-2">– Withholding tax management & filing with revenue authorities.</span>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h2 className="font-bold text-2xl text-[oklch(0.623_0.214_259.815)] mb-2">
+                Extended Capabilities
+              </h2>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>
+                  <span className="font-semibold text-lg text-gray-900">Tax Planning & Advisory</span>
+                  <span className="ml-2">– Our experts provide strategic tax planning to optimize your tax position and ensure compliance with ever-changing regulations.</span>
+                </li>
+                <li>
+                  <span className="font-semibold text-lg text-gray-900">Representation & Litigation Support</span>
+                  <span className="ml-2">– We represent clients before tax authorities and provide support during audits, assessments, and litigation.</span>
+                </li>
+                <li>
+                  <span className="font-semibold text-lg text-gray-900">International Taxation</span>
+                  <span className="ml-2">– Guidance on cross-border transactions, transfer pricing, and double taxation avoidance agreements (DTAA).</span>
+                </li>
+                <li>
+                  <span className="font-semibold text-lg text-gray-900">Confidentiality & Data Security</span>
+                  <span className="ml-2">– All tax data is managed with strict confidentiality and robust security protocols, ensuring your sensitive information is always protected.</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
         <div className="flex-1 flex items-start">

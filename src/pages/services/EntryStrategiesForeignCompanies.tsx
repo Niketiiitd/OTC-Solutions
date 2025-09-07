@@ -17,88 +17,195 @@ export default function EntryStrategiesForeignCompanies() {
           </h1>
         </div>
       </div>
-      {/* Heading */}
-      <div className="w-full max-w-7xl mx-auto px-2 md:px-6 pt-10 flex">
-        <h1 className="w-full text-4xl md:text-6xl font-extrabold mb-8 text-center text-[oklch(0.623_0.214_259.815)]">
-          Entry Strategies for Foreign Companies in India
-        </h1>
-      </div>
+      <div className="h-8 md:h-12"></div>
       {/* Content and Form Side by Side */}
       <div className="w-full max-w-7xl mx-auto px-2 md:px-6 pb-10 flex flex-col lg:flex-row gap-12">
         <div className="flex-1 flex flex-col">
-          <div className="space-y-6 text-lg text-gray-800 w-full">
+          <div className="space-y-8 text-lg text-gray-800 w-full text-justify">
             <section className="mb-8">
-              <h2 className="text-xl font-semibold mb-2">1. Non-Corporate Presence (Liaison / Branch / Project Office)</h2>
-              <ul className="list-disc pl-6 mb-2">
+              <h2 className="font-bold text-2xl text-[oklch(0.623_0.214_259.815)] mb-2">
+                1. Non-Corporate Presence (Liaison / Branch / Project Office)
+              </h2>
+              <ul className="list-disc pl-6 mb-2 space-y-2">
                 <li>
-                  <b>Liaison Office (Representative Office):</b> Acts as a communication channel between foreign parent company and Indian stakeholders. Cannot undertake commercial activity (only market research, networking, brand promotion). Requires RBI approval.
+                  <span className="font-semibold text-lg text-gray-900">
+                    Liaison Office (Representative Office):
+                  </span>
+                  <span className="ml-2">
+                    Acts as a communication channel between foreign parent company
+                    and Indian stakeholders. Cannot undertake commercial activity
+                    (only market research, networking, brand promotion). Requires
+                    RBI approval.
+                  </span>
                 </li>
                 <li>
-                  <b>Branch Office:</b> Can undertake export/import of goods, professional services, R&D, and consultancy. Cannot engage in retail trading or manufacturing (except in SEZs). Needs RBI approval.
+                  <span className="font-semibold text-lg text-gray-900">
+                    Branch Office:
+                  </span>
+                  <span className="ml-2">
+                    Can undertake export/import of goods, professional services,
+                    R&D, and consultancy. Cannot engage in retail trading or
+                    manufacturing (except in SEZs). Needs RBI approval.
+                  </span>
                 </li>
                 <li>
-                  <b>Project Office:</b> Temporary setup to execute a specific project in India (construction, turnkey projects, etc.). RBI approval required (sometimes automatic route).
+                  <span className="font-semibold text-lg text-gray-900">
+                    Project Office:
+                  </span>
+                  <span className="ml-2">
+                    Temporary setup to execute a specific project in India
+                    (construction, turnkey projects, etc.). RBI approval required
+                    (sometimes automatic route).
+                  </span>
                 </li>
               </ul>
             </section>
             <section className="mb-8">
-              <h2 className="text-xl font-semibold mb-2">2. Incorporated Entities</h2>
-              <ul className="list-disc pl-6 mb-2">
+              <h2 className="font-bold text-2xl text-[oklch(0.623_0.214_259.815)] mb-2">
+                2. Incorporated Entities
+              </h2>
+              <ul className="list-disc pl-6 mb-2 space-y-2">
                 <li>
-                  <b>Wholly Owned Subsidiary (WOS):</b> 100% equity owned by the foreign parent (subject to FDI policy). Can carry out permitted business activities freely. Most flexible and widely used option.
+                  <span className="font-semibold text-lg text-gray-900">
+                    Wholly Owned Subsidiary (WOS):
+                  </span>
+                  <span className="ml-2">
+                    100% equity owned by the foreign parent (subject to FDI
+                    policy). Can carry out permitted business activities freely.
+                    Most flexible and widely used option.
+                  </span>
                 </li>
                 <li>
-                  <b>Joint Venture (JV) with Indian Partner:</b> Partnership with an Indian entity. Useful when local market knowledge, distribution networks, or licenses are needed. Can be structured as equity participation in an Indian company.
+                  <span className="font-semibold text-lg text-gray-900">
+                    Joint Venture (JV) with Indian Partner:
+                  </span>
+                  <span className="ml-2">
+                    Partnership with an Indian entity. Useful when local market
+                    knowledge, distribution networks, or licenses are needed. Can
+                    be structured as equity participation in an Indian company.
+                  </span>
                 </li>
                 <li>
-                  <b>Limited Liability Partnership (LLP):</b> Allowed under FDI in sectors where 100% FDI is permitted under automatic route. Provides flexibility with fewer compliance requirements than a company.
-                </li>
-              </ul>
-            </section>
-            <section className="mb-8">
-              <h2 className="text-xl font-semibold mb-2">3. Contractual / Non-Equity Modes</h2>
-              <ul className="list-disc pl-6 mb-2">
-                <li>
-                  <b>Franchising:</b> Common in retail, food & beverage, education, and services. Brand control is retained, while Indian franchisee handles operations.
-                </li>
-                <li>
-                  <b>Licensing:</b> IP, technology, or product license granted to Indian partner. Generates royalty or licensing income for the foreign company.
-                </li>
-                <li>
-                  <b>Distribution / Agency Agreements:</b> Appoint an Indian distributor or sales agent. Low investment, but lower control.
-                </li>
-                <li>
-                  <b>Technical Collaboration / Technology Transfer:</b> Technology know-how transferred to Indian entity in exchange for royalties/fees. Popular in manufacturing sectors.
-                </li>
-              </ul>
-            </section>
-            <section className="mb-8">
-              <h2 className="text-xl font-semibold mb-2">4. Foreign Direct Investment (FDI) Routes</h2>
-              <ul className="list-disc pl-6 mb-2">
-                <li>
-                  <b>Automatic Route:</b> No prior approval required; only post-facto filing with RBI.
-                </li>
-                <li>
-                  <b>Government Route:</b> Prior approval required for sensitive sectors (defense, telecom, media, etc.).
+                  <span className="font-semibold text-lg text-gray-900">
+                    Limited Liability Partnership (LLP):
+                  </span>
+                  <span className="ml-2">
+                    Allowed under FDI in sectors where 100% FDI is permitted under
+                    automatic route. Provides flexibility with fewer compliance
+                    requirements than a company.
+                  </span>
                 </li>
               </ul>
             </section>
             <section className="mb-8">
-              <h2 className="text-xl font-semibold mb-2">Key Considerations</h2>
-              <ul className="list-disc pl-6 mb-2">
-                <li>Regulatory approvals: RBI, DPIIT, MCA, SEBI, etc.</li>
-                <li>Sectoral caps & restrictions: Some industries have caps on foreign ownership (e.g., insurance, defense).</li>
-                <li>Taxation: Corporate tax rate, GST, transfer pricing, profit repatriation.</li>
-                <li>Ease of exit: Consider repatriation of capital, liquidation process.</li>
-                <li>Local partner fit (if JV/Franchise): Due diligence is critical.</li>
+              <h2 className="font-bold text-2xl text-[oklch(0.623_0.214_259.815)] mb-2">
+                3. Contractual / Non-Equity Modes
+              </h2>
+              <ul className="list-disc pl-6 mb-2 space-y-2">
+                <li>
+                  <span className="font-semibold text-lg text-gray-900">
+                    Franchising:
+                  </span>
+                  <span className="ml-2">
+                    Common in retail, food & beverage, education, and services.
+                    Brand control is retained, while Indian franchisee handles
+                    operations.
+                  </span>
+                </li>
+                <li>
+                  <span className="font-semibold text-lg text-gray-900">
+                    Licensing:
+                  </span>
+                  <span className="ml-2">
+                    IP, technology, or product license granted to Indian partner.
+                    Generates royalty or licensing income for the foreign company.
+                  </span>
+                </li>
+                <li>
+                  <span className="font-semibold text-lg text-gray-900">
+                    Distribution / Agency Agreements:
+                  </span>
+                  <span className="ml-2">
+                    Appoint an Indian distributor or sales agent. Low investment,
+                    but lower control.
+                  </span>
+                </li>
+                <li>
+                  <span className="font-semibold text-lg text-gray-900">
+                    Technical Collaboration / Technology Transfer:
+                  </span>
+                  <span className="ml-2">
+                    Technology know-how transferred to Indian entity in exchange
+                    for royalties/fees. Popular in manufacturing sectors.
+                  </span>
+                </li>
+              </ul>
+            </section>
+            <section className="mb-8">
+              <h2 className="font-bold text-2xl text-[oklch(0.623_0.214_259.815)] mb-2">
+                4. Foreign Direct Investment (FDI) Routes
+              </h2>
+              <ul className="list-disc pl-6 mb-2 space-y-2">
+                <li>
+                  <span className="font-semibold text-lg text-gray-900">
+                    Automatic Route:
+                  </span>
+                  <span className="ml-2">
+                    No prior approval required; only post-facto filing with RBI.
+                  </span>
+                </li>
+                <li>
+                  <span className="font-semibold text-lg text-gray-900">
+                    Government Route:
+                  </span>
+                  <span className="ml-2">
+                    Prior approval required for sensitive sectors (defense,
+                    telecom, media, etc.).
+                  </span>
+                </li>
+              </ul>
+            </section>
+            <section className="mb-8">
+              <h2 className="font-bold text-2xl text-[oklch(0.623_0.214_259.815)] mb-2">
+                Key Considerations
+              </h2>
+              <ul className="list-disc pl-6 mb-2 space-y-2">
+                <li>
+                  Regulatory approvals: RBI, DPIIT, MCA, SEBI, etc.
+                </li>
+                <li>
+                  Sectoral caps & restrictions: Some industries have caps on
+                  foreign ownership (e.g., insurance, defense).
+                </li>
+                <li>
+                  Taxation: Corporate tax rate, GST, transfer pricing, profit
+                  repatriation.
+                </li>
+                <li>
+                  Ease of exit: Consider repatriation of capital, liquidation
+                  process.
+                </li>
+                <li>
+                  Local partner fit (if JV/Franchise): Due diligence is critical.
+                </li>
               </ul>
             </section>
             <section>
-              <h2 className="text-xl font-semibold mb-2">Recommendation</h2>
-              <ul className="list-disc pl-6">
-                <li>If the aim is market testing → Liaison Office or Branch Office.</li>
-                <li>If the aim is full control and long-term presence → Wholly Owned Subsidiary.</li>
-                <li>If the aim is shared risk and local expertise → Joint Venture or Franchise model.</li>
+              <h2 className="font-bold text-2xl text-[oklch(0.623_0.214_259.815)] mb-2">
+                Recommendation
+              </h2>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>
+                  If the aim is market testing → Liaison Office or Branch Office.
+                </li>
+                <li>
+                  If the aim is full control and long-term presence → Wholly Owned
+                  Subsidiary.
+                </li>
+                <li>
+                  If the aim is shared risk and local expertise → Joint Venture or
+                  Franchise model.
+                </li>
               </ul>
             </section>
             {/* Entry Strategies Comparison Table */}
@@ -211,7 +318,7 @@ export default function EntryStrategiesForeignCompanies() {
       </div>
       {/* Explore Other Services Section */}
       <div className="w-full max-w-7xl mx-auto px-2 md:px-6 pb-10">
-        <h2 className="mt-[10%] text-5xl mb-8 text-center text-[oklch(0.623_0.214_259.815)]">
+        <h2 className="mt-[10%] text-5xl mb-8 text-center text-[oklch(0.623_0.214_259.815)] font-extrabold">
           Explore Other Services
         </h2>
         <ServiceCards />

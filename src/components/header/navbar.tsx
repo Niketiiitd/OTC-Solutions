@@ -12,6 +12,17 @@ import { useLocation, useNavigate } from "react-router-dom";
 // Mockup data for services and subtopics
 const services = [
   {
+    title: "Entry Strategies for Foreign Companies in India",
+    subtopics: [
+      "Non-Corporate Presence (Liaison / Branch / Project Office)",
+      "Incorporated Entities",
+      "Contractual / Non-Equity Modes",
+      "Foreign Direct Investment (FDI) Routes",
+      "Key Considerations",
+      "Recommendation"
+    ]
+  },
+  {
     title: "For Start-Up & New Entity Registrations in India (New Bharat)",
     subtopics: [
       "Business Establishment Registrations",
@@ -54,17 +65,6 @@ const services = [
       "Talent Search & Recruitment- Headhunting Assessment by specialist team.",
       "TA Associate Services- Conduct telephonic interview and assessment, for middle & junior level positions.",
       "Recruitment Process- Outsourcing- Manage complete Talent Acquisition services for projects."
-    ]
-  },
-  {
-    title: "Entry Strategies for Foreign Companies in India",
-    subtopics: [
-      "Non-Corporate Presence (Liaison / Branch / Project Office)",
-      "Incorporated Entities",
-      "Contractual / Non-Equity Modes",
-      "Foreign Direct Investment (FDI) Routes",
-      "Key Considerations",
-      "Recommendation"
     ]
   }
 ];
@@ -189,22 +189,22 @@ export default function Navbar() {
                             let servicePath = "";
                             switch (sidx) {
                               case 0:
-                                servicePath = "/services/start-up-new-entity-registrations";
+                                servicePath = "/services/entry-strategies-foreign-companies";
                                 break;
                               case 1:
-                                servicePath = "/services/business-accounting-book-keeping";
+                                servicePath = "/services/start-up-new-entity-registrations";
                                 break;
                               case 2:
-                                servicePath = "/services/management-reporting-finance-control";
+                                servicePath = "/services/business-accounting-book-keeping";
                                 break;
                               case 3:
-                                servicePath = "/services/tax-management";
+                                servicePath = "/services/management-reporting-finance-control";
                                 break;
                               case 4:
-                                servicePath = "/services/payroll-hr-services";
+                                servicePath = "/services/tax-management";
                                 break;
                               case 5:
-                                servicePath = "/services/entry-strategies-foreign-companies";
+                                servicePath = "/services/payroll-hr-services";
                                 break;
                               default:
                                 servicePath = "/services";
