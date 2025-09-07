@@ -306,6 +306,9 @@ export default function EntryStrategiesForeignCompanies() {
                   </tr>
                 </tbody>
               </table>
+              <div className="mt-2 text-sm text-gray-600 font-medium">
+                <strong>Note:</strong> Taxation for Good & Service Tax and Income Tax rate are indicative &amp; subject to Rule as per Relevant Act of Statutory body.
+              </div>
             </div>
             {/* End Table */}
           </div>
