@@ -46,7 +46,11 @@ export default function WhoAreWe() {
       <div className="mt-20 flex flex-col md:flex-row items-center gap-10">
         {/* Left: Content */}
         <div className="flex-1">
-          <h2 className="text-6xl font-bold text-[oklch(0.623_0.214_259.815)] mb-4">Who are we</h2>
+          <h2 className="text-6xl font-bold text-[oklch(0.623_0.214_259.815)] mb-4 flex items-center gap-3">
+            {/* Added icon */}
+            <img src="https://api.iconify.design/mdi/account-group.svg?color=%23623dcf" alt="Who are we icon" className="w-12 h-12 inline-block" />
+            Who are we
+          </h2>
           <div className="space-y-5 text-base text-gray-700">
             <p>
               OTC Solutions started in 2012 with vision to partnering with your business as back office over-the-counter finance & accounting Advisory solution so that our clients focus on strategic expansion of their business.
@@ -100,7 +104,9 @@ export default function WhoAreWe() {
 
       {/* Automated Review Mechanism Section */}
       <div className="mt-[10%]">
-        <h2 className="text-6xl font-bold text-[oklch(0.623_0.214_259.815)] mb-4 text-left">
+        <h2 className="text-6xl font-bold text-[oklch(0.623_0.214_259.815)] mb-4 text-left flex items-center gap-3">
+          {/* Added icon */}
+          <img src="https://api.iconify.design/mdi/robot-outline.svg?color=%23623dcf" alt="Automated Review icon" className="w-12 h-12 inline-block" />
           AUTOMATED REVIEW MECHANISM OF ACCOUNTING
         </h2>
         <p className="text-lg text-gray-700 mb-8">
@@ -113,27 +119,27 @@ export default function WhoAreWe() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {[
             {
-              iconImg: "/icons/review.svg",
+              iconImg: "https://api.iconify.design/mdi/file-document-edit-outline.svg?color=%23623dcf",
               title: "Accounting Review",
               desc: "Ensure speed accuracy and efficiency with our bookkeeping review module.",
             },
             {
-              iconImg: "/icons/monthly.svg",
+              iconImg: "https://api.iconify.design/mdi/calendar-month-outline.svg?color=%23623dcf",
               title: "Monthly Review",
               desc: "Accurate monthly closure with common and GL checklists reconciliations and supporting documents.",
             },
             {
-              iconImg: "/icons/analysis.svg",
+              iconImg: "https://api.iconify.design/mdi/chart-line-variant.svg?color=%23623dcf",
               title: "Financial Analysis",
               desc: "Get accurate financial information for informed business decision making.",
             },
             {
-              iconImg: "/icons/reporting.svg",
+              iconImg: "https://api.iconify.design/mdi/file-chart-outline.svg?color=%23623dcf",
               title: "Reporting Module",
               desc: "Comprehensive reporting packets and analytics to strategically manage your financial review process.",
             },
             {
-              iconImg: "/icons/quality.svg",
+              iconImg: "https://api.iconify.design/mdi/checkbox-marked-circle-outline.svg?color=%23623dcf",
               title: "Quality Assurance",
               desc: "This overarching module ensures all the quality standards are followed throughout the entire process/application.",
             },
@@ -143,6 +149,7 @@ export default function WhoAreWe() {
               className="flex flex-col rounded-xl p-6 bg-white h-full"
             >
               <div className="flex items-center mb-4">
+                {/* Use internet icon */}
                 <img src={item.iconImg} alt="" className="w-10 h-10 mr-3" />
                 <h3 className="text-xl font-semibold text-[oklch(0.623_0.214_259.815)]">{item.title}</h3>
               </div>
